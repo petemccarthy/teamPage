@@ -1,7 +1,14 @@
+import Member from '../Member/Member'
+
 export const QUERY = gql`
   query TeamMembersQuery {
     teamMembers {
       id
+      name
+      role
+      imageUrl
+      twitterUrl
+      linkedinUrl
     }
   }
 `
@@ -16,10 +23,10 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ teamMembers }) => {
   return (
-    <ul>
-      {teamMembers.map((item) => {
-        return <li key={item.id}>{JSON.stringify(item)}</li>
-      })}
+    <ul className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
+      {teamMembers.map((teamMember) => (
+        <Member key={teamMember.id} teamMember={teamMember} />
+      ))}
     </ul>
   )
 }
