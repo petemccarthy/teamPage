@@ -1,14 +1,26 @@
 import Member from '../Member/Member'
 
+// export const QUERY = gql`
+//   query TeamMembersQuery {
+//     teamMembers {
+//       id
+//       name
+//       role
+//       imageUrl
+//       twitterUrl
+//       linkedinUrl
+//     }
+//   }
+// `
 export const QUERY = gql`
-  query TeamMembersQuery {
+  query FindTeamMembers {
     teamMembers {
       id
       name
       role
       imageUrl
       twitterUrl
-      linkedinUrl
+      linkedInURL
     }
   }
 `
